@@ -12,3 +12,6 @@ Using Unet for semantic segmentation, deep Q learning for reinforcement learning
 
 ## Evaluation Plan
 The success of the project can be determined in a similar manner to our performance validation where classification and location accuracy success can be evaluated. The project can also include a runtime output that will measure the efficiency. The runtime should decrease as the player walks through the minecraft world as part of a learning algorithm. 
+
+## Appointment with the Instructor
+10:00am - 10:15am, Thursday, October 22, 2020
