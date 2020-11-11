@@ -3,38 +3,16 @@ layout: default
 title:  Home
 ---
 
-Source code: https://github.com/KevinJChen/MCSemanticSegmentation (_fix this_)
+Team Members:
+Kevin Chen, Alex Zuzow, Thy Ton
 
-Reports:
+Project Description:
+Our project involves segmenting the first person view of an agent and labeling each general structure. The program starts by scanning the nearby blocks and determining the surface block that would be in line of sight of the player. This allows us to know the location and label of any given block or entity in the player's line of sight. This is followed by segmenting the player's pov with the help of a few Malmo functions to generate a video/photo of their view. This is followed by a trainig algorithm using neural networks and learning to determine the various structures across this platform.
 
-- [Proposal](proposal.html)
-- [Status](status.html)
-- [Final](final.html)
-
-What's Markdown (`.md`)?
-
-Markdown is markup that lets you write hypertext (HTML) documents
-in easy-to-read and easy-to-write plain text.
-No angle brackets `<></>` required for
-paragraphs, lists, blockquotes, tables, etc.
+Images:
 
 
-This is a paragraph (in Markdown). Some more
-text here.
 
-This is another paragraph.
-
-This is a list:
-
-- Orange
-- Apple
-- Blueberry
-
-$$x^2 = y^2$$
-
-
-Just getting started with Markdown?
-See the [HTML <-> Markdown Quick Reference (Cheat Sheet)][quickref].
-
-
-[quickref]: https://github.com/mundimark/quickrefs/blob/master/HTML.md
+Articles that we found helpful:
+https://arxiv.org/pdf/1606.00915.pdf
+https://neptune.ai/blog/image-segmentation-in-2020
