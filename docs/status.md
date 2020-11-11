@@ -4,7 +4,9 @@ title:  Status
 ---
 
 Summary:
-
+Semantic Segmentation involves segmenting the agent player's view and labeling not just the individual blocks, but the
+general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance
+and time to be as optimal as possible. 
 
 Approach:
 Our approach can be broken into a few steps. The first step was data gathering which was a little more complicated than it
@@ -14,6 +16,8 @@ receiving a 3D array and sifting through each element to determine the surface v
 it is fed into the trainig algorithm where it will be trained across numerous datasets to make it as accurate as possible. A
 k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm which we
 can use to compare the results and accuracy of the labeling.
+
+
 
 Evaluation:
 
@@ -30,7 +34,10 @@ more than we may need for Minecraft because ultimately, there are more details i
 the evaluation where a quick k-means algorithm will be used to evaluate the performance of the implemented learning algorithms.
 
 Resources Used:
-
-
+https://en.wikipedia.org/wiki/CIELAB_color_space
+https://github.com/chenxi116/DeepLabv3.pytorch
+https://arxiv.org/pdf/1606.00915.pdf
+https://neptune.ai/blog/image-segmentation-in-2020
+https://python-colormath.readthedocs.io/en/latest/
 
 
