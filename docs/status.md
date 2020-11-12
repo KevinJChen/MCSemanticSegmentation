@@ -6,23 +6,28 @@ title:  Status
 Summary:
 Semantic Segmentation involves segmenting the agent player's view and labeling not just the individual blocks, but the
 general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance
-and time to be as optimal as possible. 
+and time to be as optimal as possible, so that it can be run while the agent walks around in the world.
 
 Approach:
 Our approach can be broken into a few steps. The first step was data gathering which was a little more complicated than it
 may seem. In order for us to train data, we needed to know the all the blocks and entities on the player's screen as well as
 the location and its distance from the player. We achieved this by scanning the area to know each available type of block,
 receiving a 3D array and sifting through each element to determine the surface visible to the player. After the data is obtained,
-it is fed into the trainig algorithm where it will be trained across numerous datasets to make it as accurate as possible. A
-k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm which we
-can use to compare the results and accuracy of the labeling.
+it is fed into the trainig algorithm where it will be trained across numerous datasets to make it as accurate as possible. 
 
+A k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm 
+which we will use to compare the results and accuracy of the labeling. This evaluation will come first before moving onto
+an evaluation of the algorithm's efficiency. Since the semantic segmentation must be running and outputting in real time,
+the efficiency of the algorithm is also an important metric in insuring that it can be as accurate as possible in the least
+amount of time. Some sacrifices may be made to accuracy to add to time.
 
 
 Evaluation:
 
-
-IOU Performance
+The first evaluation metric that we will utilize is IOU validation (Intersect over union). This type of validation measures
+exactly what we need, the accuracy of an object detector over a dataset, in this case over blocks in minecraft. The evaluation
+metric creates a predicted bounding box of where the image is located on the screen where its error from the ground bounding
+box can be measured.
 
 
 Remaining Goals and Challenges:
