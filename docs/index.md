@@ -17,6 +17,10 @@ Examples of generated color maps
 
 ![alt text](images/sample1.png)
 
+![alt text](images/sample2.png)
+
+![alt text](images/sample3.png)
+
 
 
 Articles that we found helpful:
