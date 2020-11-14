@@ -23,6 +23,11 @@ amount of time. Some sacrifices may be made to accuracy to add to time.
 
 Images created from our work:
 
+First Image: Original Environment
+Second Image: First attempt at segmentation
+Third Image: Second Attempt at segmentation (current image)
+Fourth Image: Malmo Color Map version
+
 ![alt text](images/gen1.png)
 ![alt text](images/gen2.png)
 ![alt text](images/gen3.png)
