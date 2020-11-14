@@ -23,7 +23,10 @@ amount of time. Some sacrifices may be made to accuracy to add to time.
 
 Images created from our work:
 
-![alt text]
+![alt text](images/gen1.png)
+![alt text](images/gen2.png)
+![alt text](images/gen3.png)
+![alt text](images/gen4.png)
 
 
 Evaluation: The first evaluation metric that we will utilize is IOU validation (Intersect over union). This type of validation measures
@@ -33,8 +36,9 @@ box can be measured. IOU can not be directly used as an algorithm, rather its so
 
 We will also be using a k-means algorithm that will run alongside as validation data. K-means will cluster regions of the agent view and,
 similarly to the IOU validation, identify locations of the structures. We will then compare this to our experimental data
-set and focus on reducing the possible errors.
-
+set and focus on reducing the possible errors. K-means should be a much quicker algorithm, but be a little less accurate,
+so a gap between that data and the generated data is expected. The combination of k-means with IOU allows us to determine if
+that gap is of enough significance.
 
 Remaining Goals and Challenges:
 We are attempting to train the data in the person's view to label the different structures including tree and building. This is
