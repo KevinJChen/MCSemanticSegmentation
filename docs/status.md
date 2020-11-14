@@ -18,7 +18,7 @@ may seem. In order for us to train our semantic segmentation model, we needed im
 ![Illustrated Figure](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-21-at-10.44.23-PM.png)
 
 ####   Agent exploring the world
-We set the agent in `Spectator` mode through XML element `<AgentSection mode="Spectator">` so the agent doesn't appear in the recordings throughout the exploration. We randomly place the agent anywhere it can stand for a period so the recorder could capture the view. At each sampled position in the world, we scan the surround block types to determine if the agent can stand and a visible surface.
+We set the agent in `Spectator` mode through XML element `<AgentSection mode="Spectator">` so the agent doesn't interact with the world around it. We randomly place the agent anywhere it can stand on the surface within a 20x20 block area for a period so the recorder could capture the view.
 
 ####   Generating the player screen images and ground truths
 We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate)](https://microsoft.github.io/malmo/0.30.0/Documentation/structmalmo_1_1_mission_record_spec.html#abb9a25b0709327867295d2ce21d8b086) to request that screen player video be recorded. Using the following `FrameType`'s lets us record the original version and "near" ground truth version of the videos:
@@ -30,7 +30,7 @@ We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_
 ***FrameType=COLOUR_MAP: Ground truth version***
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hgak0LM6nwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-We then use package `cv2` to extract and pair up image frames from these videos. Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. That leads to 1.32 million colors mapping 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class. We achieve this by using package [python-colormath](https://python-colormath.readthedocs.io/en/latest/color_objects.html). 
+We then use package `cv2` to extract and pair up image frames from these videos. Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`stone`**. That leads to over a million colors mapping to 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class. We achieve this by using package [python-colormath](https://python-colormath.readthedocs.io/en/latest/color_objects.html). 
 
 
 ![](./images/original.png)
@@ -50,7 +50,7 @@ We then use package `cv2` to extract and pair up image frames from these videos.
 
 
 ###   2.   Training
-After the data is obtained, it is fed into the UNet algorithm for model training
+After the data is obtained, it is fed into the DeepLabV3 algorithm for model training
 
 A k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm 
 which we will use to compare the results and accuracy of the labeling. This evaluation will come first before moving onto
