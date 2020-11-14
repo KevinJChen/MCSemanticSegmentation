@@ -54,10 +54,15 @@ more than we may need for Minecraft because ultimately, there are more details i
 the evaluation where a quick k-means algorithm will be used to evaluate the performance of the implemented learning algorithms.
 
 Resources Used:
+
 https://en.wikipedia.org/wiki/CIELAB_color_space
+
 https://github.com/chenxi116/DeepLabv3.pytorch
+
 https://arxiv.org/pdf/1606.00915.pdf
+
 https://neptune.ai/blog/image-segmentation-in-2020
+
 https://python-colormath.readthedocs.io/en/latest/
 
 
