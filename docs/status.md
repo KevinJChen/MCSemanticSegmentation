@@ -24,10 +24,10 @@ We set the agent in `Spectator` mode through XML element `<AgentSection mode="Sp
 We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate)](https://microsoft.github.io/malmo/0.30.0/Documentation/structmalmo_1_1_mission_record_spec.html#abb9a25b0709327867295d2ce21d8b086) to request that screen player video be recorded. Using the following `FrameType`'s lets us record the original version and "near" groundtruth version of the videos:
 
     FrameType=VIDEO: Original version 
-![](./images/original.gif)
+![original](./images/original.gif)
 
     FrameType=COLOUR_MAP: "near" groundtruth version 
-![](./images/colormap.gif)
+![colormap](./images/colormap.gif)
 
 We then use Python package `cv2` to extract and pair up image frames from these videos. Finally, we put "near" groundtruth image frames through a K-Means model to make them groundtruth. The reason they are "near" groundtruth is Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. Minecraft generates 1.32 million colors but we only have 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class, i.e. 180 colors to 180 classes.
 
@@ -40,11 +40,11 @@ We then use Python package `cv2` to extract and pair up image frames from these 
 
 
 ![](./images/first_attempt.png)
-*our first attempt to generate one-to-one mapping*
+*our first attempt to generate groundtruth*
 
 
 ![](./images/second_attempt.png)
-*our second attempt to generate one-to-one mapping*
+*our second attempt to generate groundtruth*
 
 
 #####   2.   Training
