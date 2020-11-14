@@ -7,6 +7,8 @@ title:  Status
 Our Semantic Segmentation involves predicting the class of each pixel in the agent player's view. The classes are not just the individual blocks, but the general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance and time to be as optimal as possible, so that it can annotate each pixel of the view while the agent walks around in the world. Since our proposal, we've found the solution to collect images and their ground truths. These will serve as our model's training and testing dataset
 
 ### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Approach
 Our approach can be broken into a few steps.
@@ -27,7 +29,7 @@ We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_
     FrameType=COLOUR_MAP: "near" groundtruth version 
 ![](./images/colormap.gif)
 
-We then use Python package `cv2` to extract and pair up image frames from these videos. Finally, we put "near" groundtruth image frames through a K-Means model to make them groundtruth. The reason they are "near" groundtruth is Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. Minecraft generates 1.32 million colors but we only have 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class.
+We then use Python package `cv2` to extract and pair up image frames from these videos. Finally, we put "near" groundtruth image frames through a K-Means model to make them groundtruth. The reason they are "near" groundtruth is Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. Minecraft generates 1.32 million colors but we only have 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class, i.e. 180 colors to 180 classes.
 
 ![](./images/original.png)
 *original frame*
@@ -60,19 +62,31 @@ amount of time. Some sacrifices may be made to accuracy to add to time.
 The first evaluation metric that we will utilize is IOU validation (Intersect over union). This type of validation measures
 exactly what we need, the accuracy of an object detector over a dataset, in this case over blocks in minecraft. The evaluation
 metric creates a predicted bounding box of where the image is located on the screen where its error from the ground bounding
-box can be measured.
+box can be measured. IOU can not be directly used as an algorithm, rather its sole purpose is evaluation of our model. 
 
+We will also be using a k-means algorithm that will run alongside as validation data. K-means will cluster regions of the agent view and,
+similarly to the IOU validation, identify locations of the structures. We will then compare this to our experimental data
+set and focus on reducing the possible errors. K-means should be a much quicker algorithm, but be a little less accurate,
+so a gap between that data and the generated data is expected. The combination of k-means with IOU allows us to determine if
+that gap is of enough significance.
 
 ## Remaining Goals and Challenges
+
 We are attempting to train the data in the person's view to label the different structures including tree and building. This is achieved by adding a deep learning algorithm and a reinforcement learning algorithm which we are currently sifting through the details for. The algorithm ideas and implementation were the result of researching reading multiple learning algorithms that have been implemented into real life semantic segmentations. These algorithms are often much more detailed and account for a lot
 more than we may need for Minecraft because ultimately, there are more details in the real world than Minecraft. We will end by the evaluation where a quick k-means algorithm will be used to evaluate the performance of the implemented learning algorithms.
 
 ## Resources Used
+
 https://en.wikipedia.org/wiki/CIELAB_color_space
+
 https://github.com/chenxi116/DeepLabv3.pytorch
+
 https://arxiv.org/pdf/1606.00915.pdf
+
 https://neptune.ai/blog/image-segmentation-in-2020
+
 https://python-colormath.readthedocs.io/en/latest/
+
 https://pytorch.org/tutorials/recipes/recipes/custom_dataset_transforms_loader.html
 
 
