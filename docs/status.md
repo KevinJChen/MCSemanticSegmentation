@@ -21,23 +21,24 @@ may seem. In order for us to train our semantic segmentation model, we needed im
 We set the agent in `Spectator` mode through XML element `<AgentSection mode="Spectator">` so the agent doesn't appear in the recordings throughout the exploration. We randomly place the agent anywhere it can stand for a period so the recorder could capture the view. At each sampled position in the world, we scan the surround block types to determine if the agent can stand and a visible surface.
 
 ####   Generating the player screen images and ground truths
-We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate)](https://microsoft.github.io/malmo/0.30.0/Documentation/structmalmo_1_1_mission_record_spec.html#abb9a25b0709327867295d2ce21d8b086) to request that screen player video be recorded. Using the following `FrameType`'s lets us record the original version and "near" groundtruth version of the videos:
+We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate)](https://microsoft.github.io/malmo/0.30.0/Documentation/structmalmo_1_1_mission_record_spec.html#abb9a25b0709327867295d2ce21d8b086) to request that screen player video be recorded. Using the following `FrameType`'s lets us record the original version and "near" ground truth version of the videos:
 
 ***FrameType=VIDEO: Original version***
-<iframe width="560" height="315" src="https://youtu.be/DWryONNKgQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DWryONNKgQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
-***FrameType=COLOUR_MAP: Groundtruth version***
-<iframe width="560" height="315" src="https://youtu.be/hgak0LM6nwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+***FrameType=COLOUR_MAP: Ground truth version***
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hgak0LM6nwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-We then use Python package `cv2` to extract and pair up image frames from these videos. Finally, we put "near" groundtruth image frames through a K-Means model to make them groundtruth. The reason they are "near" groundtruth is Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. Minecraft generates 1.32 million colors but we only have 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class, i.e. 180 colors to 180 classes.
+We then use package `cv2` to extract and pair up image frames from these videos. Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. That leads to 1.32 million colors mapping 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class. We achieve this by using package [python-colormath](https://python-colormath.readthedocs.io/en/latest/color_objects.html). 
+
 
 ![](./images/original.png)
 *original frame*
 
 
 ![](./images/colormap.png)
-*groundtruth frame*
+*ground truth frame*
 
 
 ![](./images/first_attempt.png)
