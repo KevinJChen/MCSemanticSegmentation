@@ -21,13 +21,19 @@ an evaluation of the algorithm's efficiency. Since the semantic segmentation mus
 the efficiency of the algorithm is also an important metric in insuring that it can be as accurate as possible in the least
 amount of time. Some sacrifices may be made to accuracy to add to time.
 
+Images created from our work:
 
-Evaluation:
+![alt text]
 
-The first evaluation metric that we will utilize is IOU validation (Intersect over union). This type of validation measures
+
+Evaluation: The first evaluation metric that we will utilize is IOU validation (Intersect over union). This type of validation measures
 exactly what we need, the accuracy of an object detector over a dataset, in this case over blocks in minecraft. The evaluation
 metric creates a predicted bounding box of where the image is located on the screen where its error from the ground bounding
-box can be measured.
+box can be measured. IOU can not be directly used as an algorithm, rather its sole purpose is evaluation of our model. 
+
+We will also be using a k-means algorithm that will run alongside as validation data. K-means will cluster regions of the agent view and,
+similarly to the IOU validation, identify locations of the structures. We will then compare this to our experimental data
+set and focus on reducing the possible errors.
 
 
 Remaining Goals and Challenges:
