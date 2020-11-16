@@ -4,13 +4,10 @@ title:  Status
 ---
 
 ## Summary
-Our Semantic Segmentation involves predicting the class of each pixel in the agent player's view. The classes are not just the individual blocks, but the general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance and time to be as optimal as possible, so that it can annotate each pixel of the view while the agent walks around in the world. Since our proposal, we've found the solution to collect images and their ground truths. These will serve as our model's training and testing dataset
+Our Semantic Segmentation involves predicting the class of each pixel in the agent player's view. The classes are not just the individual blocks, but the general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance and time to be as optimal as possible, so that it can annotate each pixel of the view while the agent walks around in the world. Since our proposal, we've found the solution to collect images and their ground truths. These will serve as our model's training and testing dataset. 
 
 ### Video
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/brrMn67sN6M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=brrMn67sN6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Approach
@@ -21,19 +18,19 @@ may seem. In order for us to train our semantic segmentation model, we needed im
 ![Illustrated Figure](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-21-at-10.44.23-PM.png)
 
 ####   Agent exploring the world
-We set the agent in `Spectator` mode through XML element `<AgentSection mode="Spectator">` so the agent doesn't interact with the world around it. We randomly place the agent anywhere it can stand on the surface within a 20x20 block area for a period so the recorder could capture the view.
+We set the agent in `Spectator` mode through XML element `<AgentSection mode="Spectator">` so the agent is able to fly and does not interact with the surronding world throughout the exploration. We randomly place the agent anywhere it can stand for a period so the recorder could capture the view. At each sampled position in the world, we scan the surround block types to determine if the agent can stand and a visible surface.
 
 ####   Generating the player screen images and ground truths
 We use [MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate)](https://microsoft.github.io/malmo/0.30.0/Documentation/structmalmo_1_1_mission_record_spec.html#abb9a25b0709327867295d2ce21d8b086) to request that screen player video be recorded. Using the following `FrameType`'s lets us record the original version and "near" ground truth version of the videos:
 
 ***FrameType=VIDEO: Original version***
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DWryONNKgQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hgak0LM6nwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
  
 ***FrameType=COLOUR_MAP: Ground truth version***
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hgak0LM6nwE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DWryONNKgQ0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-We then use package `cv2` to extract and pair up image frames from these videos. Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`stone`**. That leads to over a million colors mapping to 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class. We achieve this by using package [python-colormath](https://python-colormath.readthedocs.io/en/latest/color_objects.html). 
+We then use package `cv2` to extract and pair up image frames from these videos. Minecraft uses many similar colors to represent the same entity class. For example, colors `#2e2b00` and `#2d2c00` are associated with class **`dirt`**. That leads to 1.32 million colors mapping 180 classes in the world. Our goal is to have a have one-to-one mapping color mask to entity class. We achieve this by using package [python-colormath](https://python-colormath.readthedocs.io/en/latest/color_objects.html). 
 
 
 ![](./images/original.png)
@@ -53,7 +50,7 @@ We then use package `cv2` to extract and pair up image frames from these videos.
 
 
 ###   2.   Training
-After the data is obtained, it is fed into the DeepLabV3 algorithm for model training
+After the data is obtained, it is fed into the UNet algorithm for model training
 
 A k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm 
 which we will use to compare the results and accuracy of the labeling. This evaluation will come first before moving onto
@@ -68,12 +65,6 @@ The first evaluation metric that we will utilize is IOU validation (Intersect ov
 exactly what we need, the accuracy of an object detector over a dataset, in this case over blocks in minecraft. The evaluation
 metric creates a predicted bounding box of where the image is located on the screen where its error from the ground bounding
 box can be measured. IOU can not be directly used as an algorithm, rather its sole purpose is evaluation of our model. 
-
-We will also be using a k-means algorithm that will run alongside as validation data. K-means will cluster regions of the agent view and,
-similarly to the IOU validation, identify locations of the structures. We will then compare this to our experimental data
-set and focus on reducing the possible errors. K-means should be a much quicker algorithm, but be a little less accurate,
-so a gap between that data and the generated data is expected. The combination of k-means with IOU allows us to determine if
-that gap is of enough significance.
 
 
 ## Remaining Goals and Challenges
