@@ -4,7 +4,7 @@ title:  Status
 ---
 
 ## Summary
-Our Semantic Segmentation involves predicting the class of each pixel in the agent player's view. The classes are not just the individual blocks, but the general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance and time to be as optimal as possible, so that it can annotate each pixel of the view while the agent walks around in the world. Since our proposal, we've found the solution to collect images and their ground truths. These will serve as our model's training and testing dataset. 
+Our Semantic Segmentation involves predicting the class of each pixel in the agent player's view. The classes are not just the individual blocks, but the general structures that may appear in Minecraft such as a tree, a building, or a pond. The goal is for both performance and time to be as optimal as possible, so that it can annotate each pixel of the view while the agent walks around in the world. Since our proposal, we've found the solution to collect images and their ground truths. These will serve as our model's training and testing dataset. We've also changed our base model from UNET to k-means. We look into how much better DeepLab model can do than the k-means model.
 
 ### Video
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5qap5aO4i9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -50,13 +50,7 @@ We then use package `cv2` to extract and pair up image frames from these videos.
 
 
 ###   2.   Training
-After the data is obtained, it is fed into the UNet algorithm for model training
-
-A k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm 
-which we will use to compare the results and accuracy of the labeling. This evaluation will come first before moving onto
-an evaluation of the algorithm's efficiency. Since the semantic segmentation must be running and outputting in real time,
-the efficiency of the algorithm is also an important metric in insuring that it can be as accurate as possible in the least
-amount of time. Some sacrifices may be made to accuracy to add to time.
+After the data is obtained, it is fed into k-means algorithm. Also, it is fed to a pretrained deeplabv3 model to transfer learning to minecraft images.
 
 
 ## Evaluation
@@ -65,6 +59,12 @@ The first evaluation metric that we will utilize is IOU validation (Intersect ov
 exactly what we need, the accuracy of an object detector over a dataset, in this case over blocks in minecraft. The evaluation
 metric creates a predicted bounding box of where the image is located on the screen where its error from the ground bounding
 box can be measured. IOU can not be directly used as an algorithm, rather its sole purpose is evaluation of our model. 
+
+A k-means algorithm will also be along the side to give us an approximate evaluation of the performance of our algorithm 
+which we will use to compare the results and accuracy of the labeling. This evaluation will come first before moving onto
+an evaluation of the algorithm's efficiency. Since the semantic segmentation must be running and outputting in real time,
+the efficiency of the algorithm is also an important metric in insuring that it can be as accurate as possible in the least
+amount of time. Some sacrifices may be made to accuracy to add to time.
 
 
 ## Remaining Goals and Challenges
