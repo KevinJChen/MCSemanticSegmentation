@@ -19,3 +19,9 @@ The success of the project can be determined in a similar manner to our performa
 
 ## Appointment with the Instructor
 10:00am - 10:15am, Thursday, October 22, 2020
+
+## Weekly Meet Times
+Our team meets on Tuesday and Wednesday evenings at around 7 PM.
+
+## Goals for Status Reports
+Using Malmo functions, figure a way to detect the type and location of a block that appears on the screen.
