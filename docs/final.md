@@ -25,7 +25,7 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 ## Evaluation
 
-### Elbow Method for K-Means
+### Elbow Method for K-Means Evaluation
 
 For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We chose the elbow method which determined the optimal value for k based on the sum of squared distances (SSE) between data points and the cluster centroids. We first evaluated using the elbow method on one image with k=40 and then proceeded to test this multiple times to a numerous sample of images:
 
@@ -45,11 +45,7 @@ Elbow Method on a sample of images:
 Looking at the example graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the k value of 8 as from the sum of our tests, it seemed to be the next most optimal k value.
 
 
-### K-Means Evaluation
-
-
-We started by applying k=2 and k=8 to our images
-
+We started by applying k=2 and k=8 to our images to see the difference between these values. The results are shown below:
 
 Original:
 
