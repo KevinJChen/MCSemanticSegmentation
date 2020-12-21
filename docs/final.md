@@ -21,6 +21,9 @@ A combination of Malmo functions made it possible for us to determine what block
 <div style="float:left, padding:10px"><img src="./images/video_2186.png" width="400"/> </div>
 
 
+#### Color Map
+
+
 <div style="float: left, padding:10px"><img src="./images/colormap_2186.png" width="400"/> </div>
 
 
@@ -68,18 +71,19 @@ A lot of data lessens the impact of overfitting although it does not completely 
 
 ## Evaluation
 
+
 ### Elbow Method for K-Means Evaluation
+
 
 For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We chose the elbow method which determined the optimal value for k based on the sum of squared distances (SSE) between data points and the cluster centroids. We first evaluated using the elbow method on one image with k=40 and then proceeded to test this multiple times to a numerous sample of images:
 
 
-
-Elbow Method on one image:
+#### Elbow Method on one image:
 
 <div style="text-align:center"><img src="./images/kmeans/elbow0.png" width="400"/> </div>
 
 
-Elbow Method on a sample of images:
+#### Elbow Method on a sample of images:
 
 
 <div style="text-align:center"><img src="./images/kmeans/elbow_all_k40.png" width="400"/> </div>
@@ -89,19 +93,19 @@ Looking at the example graph, it would seem k=2 would be a clear choice for opti
 
 We applied k=2 and k=8 to our images to see the difference between these values. The results are shown below:
 
-Original:
+#### Original:
 
 
 <div style="text-align:center"><img src="./images/kmeans/img0_org.png" width="400"/> </div>
 
 
-k=2:
+#### k=2:
 
 
 <div style="text-align:center"><img src="./images/kmeans/img0_k2.png" width="400"/> </div>
 
 
-k=8:
+#### k=8:
 
 
 <div style="text-align:center"><img src="./images/kmeans/img0_k8.png" width="400"/> </div>
@@ -114,16 +118,31 @@ k=8:
 Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
 
 
-Training IoU:
+#### Training IoU:
 
 
 <div style="text-align:center"><img src="./images/dataplots/ioutr.png" width="400"/> </div>
 
 
-Testing IoU:
+#### Testing IoU:
 
 
 <div style="text-align:center"><img src="./images/dataplots/ioute.png" width="400"/> </div>
+
+
+### Loss Function
+
+
+#### Training Loss
+
+
+<div style="text-align:center"><img src="./images/dataplots/losstr.png" width="400"/> </div>
+
+
+#### Testing Loss
+
+
+<div style="text-align:center"><img src="./images/dataplots/losste.png" width="400"/> </div>
 
 
 ## References
