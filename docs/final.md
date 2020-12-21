@@ -25,6 +25,15 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 ## Evaluation
 
+# Elbow Method for K-Means
+
+For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We first evaluated on one image, which resulted in this image:
+
+![](./images/kmeans/'elbow0'.png)
+
+
+For images, 
+
 
 Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. An example of each bounding box is shown below:
 
