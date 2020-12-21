@@ -42,6 +42,16 @@ We proceeded to apply this to a sample of 10 distinct images which resulted in t
 Looking at the graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the next best k value which was k=8 for this reason.
 
 
+### K-Means Evaluation
+
+
+
+
+
+
+
+
+
 Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. An example of each bounding box is shown below:
 
 
