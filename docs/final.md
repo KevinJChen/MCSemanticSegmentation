@@ -30,16 +30,20 @@ Intersection over Union (IoU) is a metric designed for evaluation of object dete
 
 
 Original Player View:
+
 ![](./images/original1.png)
 
 
 Ground Truth Bounding Boxes:
+
 ![](./images/ground1.png)
 
 
 Prediction Bounding Boxes
+
 ![](./images/output1.png)
+
+
 ## References
 
-Checkpoint usage for running our algorithm:
 https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html
