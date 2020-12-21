@@ -17,8 +17,8 @@ Our goal for this project went through many iterations, trying to figure out a p
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
 
-<div style="text-align:center"><img src="./images/colormap1.png" width="400"/> </div>
-
+<div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/video.png" width="400"/> </div>
 
 
 ## Approaches
