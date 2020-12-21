@@ -44,8 +44,7 @@ Elbow Method on a sample of images:
 
 Looking at the example graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the k value of 8 as from the sum of our tests, it seemed to be the next most optimal k value.
 
-
-We started by applying k=2 and k=8 to our images to see the difference between these values. The results are shown below:
+We applied k=2 and k=8 to our images to see the difference between these values. The results are shown below:
 
 Original:
 
@@ -69,24 +68,20 @@ k=8:
 
 ### Intersection Over Union 
 
-Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. An example of each bounding box is shown below:
+Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
 
 
-Original Player View:
-
-![](./images/''.png = 250x)
+Training IoU:
 
 
-Ground Truth Bounding Boxes:
-
-![](./images/''.png = 250x)
+<div style="text-align:center"><img src="./images/dataplots/ioutr.png" width="400"/> </div>
 
 
-Prediction Bounding Boxes
+Testing IoU:
 
-![](./images/''.png = 250x)
 
-The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes
+<div style="text-align:center"><img src="./images/kmeans/ioute.png" width="400"/> </div>
+
 
 ## References
 
