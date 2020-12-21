@@ -18,7 +18,7 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 
 <div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
-<div style="text-align:center"><img src="./images/video.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
 
 
 ## Approaches
