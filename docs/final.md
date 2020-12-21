@@ -50,12 +50,12 @@ Looking at the example graph, it would seem k=2 would be a clear choice for opti
 ### K-Means Evaluation
 
 
+Using k=8 we 
 
 
 
 
-
-
+### Intersection Over Union 
 
 Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. An example of each bounding box is shown below:
 
