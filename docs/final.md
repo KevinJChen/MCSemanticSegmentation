@@ -43,7 +43,9 @@ Prediction Bounding Boxes
 
 ![](./images/''.png)
 
+The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes
 
 ## References
 
 https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html
+https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/#:~:text=What%20is%20Intersection%20over%20Union,the%20popular%20PASCAL%20VOC%20challenge.
