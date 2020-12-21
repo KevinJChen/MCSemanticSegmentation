@@ -10,7 +10,7 @@ title:  Final Report
 
 ## Project Summary
 
-Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class i.e. water,sky,dirt. A combination of given Malmo functions would be able to determine block/entity identity, but in order to classify structures and evaluate its accuracy, we needed to use machine learning algorithms.
+Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class i.e. water, sky, dirt. A combination of Malmo functions made it possible for us to determine block/entities in malmo however to apply this to normal minecraft we needed to apply machine learning algorithms.  
 
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
