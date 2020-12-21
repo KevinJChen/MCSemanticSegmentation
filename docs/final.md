@@ -10,13 +10,11 @@ title:  Final Report
 
 ## Project Summary
 
-
-
 Our goal for this project went through many iterations, trying to figure out a project that was feasible and would pique our interest. We had some crazy ideas before (agent battle royale), but settled on prediction of each pixel of the player perspective. This includes labeling of Minecraft structures including trees, house, and lake as classes. A combination of given Malmo functions would be able to determine block/entity identity, but in order to classify structures and evaluate its accuracy, we needed to use machine learning algorithms.
 
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
-![](./images/colormap_2186.png){width=250px} ![](./images/video_2186.png =250x){width=250px}
+
 <div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
 <div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
 
@@ -56,7 +54,7 @@ We started by applying k=2 and k=8 to our images
 Original:
 
 
-<div style="text-align:center"><img src="./images/kmeans/img0_org" width="400"/> </div>
+<div style="text-align:center"><img src="./images/kmeans/img0_org.png" width="400"/> </div>
 
 
 k=2:
