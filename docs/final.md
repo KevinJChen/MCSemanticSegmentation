@@ -50,7 +50,25 @@ Looking at the example graph, it would seem k=2 would be a clear choice for opti
 ### K-Means Evaluation
 
 
-Using k=8 we 
+We started by applying k=2 and k=8 to our images
+
+
+Original:
+
+
+<div style="text-align:center"><img src="./images/kmeans/img0_org" width="400"/> </div>
+
+
+k=2:
+
+
+<div style="text-align:center"><img src="./images/kmeans/elbow_all_k40.png" width="400"/> </div>
+
+
+k=8:
+
+
+<div style="text-align:center"><img src="./images/kmeans/img0_k8.png" width="400"/> </div>
 
 
 
