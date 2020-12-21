@@ -16,7 +16,7 @@ Our goal for this project went through many iterations, trying to figure out a p
 
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
-![](./images/colormap_2186.png)
+![](./images/colormap_2186.png) ![](./images/video_2186.png)
 <div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
 <div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
 
@@ -97,5 +97,7 @@ The IoU is then calculated by divding the area of overlap and the area of union 
 ## References
 
 https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html
+
 https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/#:~:text=What%20is%20Intersection%20over%20Union,the%20popular%20PASCAL%20VOC%20challenge.
+
 https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html
