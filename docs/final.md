@@ -60,7 +60,7 @@ Original:
 k=2:
 
 
-<div style="text-align:center"><img src="./images/kmeans/elbow_all_k40.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/kmeans/img0_k2.png" width="400"/> </div>
 
 
 k=8:
