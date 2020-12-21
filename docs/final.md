@@ -10,13 +10,9 @@ title:  Final Report
 
 ## Project Summary
 
-Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class e.g. water, sky, dirt.
+Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class e.g. water, sky, dirt(figure 1 maybe the video,ground truth,predictions image).
 
 A combination of Malmo functions made it possible for us to determine what block/entities were on the players screen, however, this does not apply to normal minecraft. In normal minecraft the only way to determine the location and type of blocks/entities that are contained within the players perspective is by having someone who is qualified manually look and decide, however, in malmo we are able to generate color maps which have corrsesponding colors for each block/entity. In order to semanticaly segment normal minecraft it was necessary apply machine learning algorithms.
-
-the main obstactle that we had to overcome was malmos colour map producer. The color maps that malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there was tens of thousands of very similar looking although unique colors which identified each block/entity. We had to find a way to compare all these similar colors and group them with eachother in order to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space and then compared them each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their own unique color, this let us convert every rgb image into a greyscale image containing numbers from 0-132.
-
-An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
 
 <div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
@@ -24,6 +20,9 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 
 ## Approaches
+Before we could apply any machine learning algorithms to aid us in our semantic segmentation task we needed to create the ground truth images for our training and test set.
+this introduced The main obstactle of the project, malmos colour map producer. The color maps that malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there was tens of thousands of very similar looking although unique colors which identified each block/entity (figure 2 the fucked up image with a lot of white). We had to find a way to compare all these similar colors and group them with eachother in order to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space and then compared them each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their own unique color, this let us convert every rgb image into a greyscale image containing numbers from 0-132(figure 3 a normal rgb mask).
+For our semantic segmentation problem we used a neural network following the DeepLabv3 architechture pretrained on resnet 101 as our model of choice.
 
 
 
