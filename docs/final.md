@@ -10,7 +10,9 @@ title:  Final Report
 
 ## Project Summary
 
-Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class i.e. water, sky, dirt. A combination of Malmo functions made it possible for us to determine block/entities in malmo however to apply this to normal minecraft we needed to apply machine learning algorithms.  
+Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class e.g. water, sky, dirt.
+
+A combination of Malmo functions made it possible for us to determine what block/entities were on the players screen, however, this does not apply to normal minecraft. In normal minecraft the only way to determine the location and type of blocks/entities that are contained within the players perspective is by having someone who is qualified manually look and decide, however, in malmo we are able to generate color maps which have corrsesponding colors for each block/entity. In order to semanticaly segment normal minecraft it was necessary apply machine learning algorithms. 
 
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
