@@ -19,12 +19,14 @@ A combination of Malmo functions made it possible for us to determine what block
 
 
 ## Approaches
+
+
 Before we could apply any machine learning algorithms to aid us in our semantic segmentation task we needed to create the ground truth images for our training and test set.
 this introduced The main obstacle of the project, Malmos color map producer. The color maps that Malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there were tens of thousands of very similar-looking although unique colors that identified each block/entity (figure 2 the fucked up image with a lot of white). We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132(figure 3 a normal RGB mask).
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice.
 
-Data Gathering
+### Data Gathering
 
 One of our main challenges was the initial data gathering for our model. As part of our data, we needed images and ground truths of the Minecraft player view as the agent moves throughout the world. We approached this by recording the player perspective in spectator view (as to remove the player model’s hand) using MissionRecordSpec.recordMP4(TimestampedVideoFrame.FrameType, frames_per_second, bit_rate) as it walked through a Minecraft map. This allowed us to gather images of the player’s screen and ground truth at set time intervals. As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color mask of our image. 
 
@@ -36,17 +38,17 @@ One-to-One mapping (using color map)
 
 This method of data gathering can generate a surplus of data. The over 13000 images generated were also of decent resolution, so we agreed that we would need a model that would use more data to minimize overfitting, but as a result may take a longer time to run.
 
-Our Model
+### Our Model
 
 (talk about model)
 
 Since our model would be fed a lot of data, there would be some immediate advantages and disadvantages. 
 
-Advantages
+#### Advantages
 
 A lot of data lessens the impact of overfitting although it does not completely eliminate it. Later in the evaluation, we can determine if our model had been overfitting or not. Having more data will compensate better for the features in our model which can reduce the variance in our model. A disadvantage of small datasets is possible bias, but since our dataset is very large most of the bias should be eliminated.
 
-Disadvantages
+#### Disadvantages
 
 
 ## Evaluation
