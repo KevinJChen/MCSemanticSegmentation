@@ -14,12 +14,12 @@ Our goal for this project went through many iterations, we began by trying to fi
 
 A combination of Malmo functions made it possible for us to determine what block/entities were on the player's screen, however, this does not apply to normal Minecraft. In normal Minecraft, the only way to determine the location and type of blocks/entities that are contained within the player's perspective is by having someone who is qualified manually look and decide. In Malmo we can generate color maps that have corresponding colors for each block/entity. To semantically segment normal Minecraft without someone manually annotating images it is necessary to apply machine learning algorithms.
 
-#### Minecraft Player View:
-<div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
+
+<div style="float:left"><img src="./images/video_2186.png" width="400"/> </div>
 
 
-#### Color Map:
-<div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
+
+<div style="float: left"><img src="./images/colormap_2186.png" width="400"/> </div>
 
 
 ## Approaches
