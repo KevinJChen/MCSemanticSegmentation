@@ -80,7 +80,7 @@ Training IoU:
 Testing IoU:
 
 
-<div style="text-align:center"><img src="./images/kmeans/ioute.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/dataplots/ioute.png" width="400"/> </div>
 
 
 ## References
