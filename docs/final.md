@@ -15,7 +15,9 @@ title:  Final Report
 Our goal for this project went through many iterations, trying to figure out a project that was feasible and would pique our interest. We had some crazy ideas before (agent battle royale), but settled on prediction of each pixel of the player perspective. This includes labeling of Minecraft structures including trees, house, and lake as classes. A combination of given Malmo functions would be able to determine block/entity identity, but in order to classify structures and evaluate its accuracy, we needed to use machine learning algorithms.
 
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
-![](./images/colormap1.png)
+
+
+![](./images/colormap1.png = 250x)
 
 
 
@@ -30,19 +32,19 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We chose the elbow method which determined the optimal value for k based on the sum of squared distances (SSE) between data points and the cluster centroids. We first evaluated using the elbow method on one image with k=40, which resulted in this graph:
 
 
-![](./images/kmeans/elbow0.png)
+![](./images/kmeans/elbow0.png = 250x)
 
 
 We proceeded to apply this to a sample of 10 distinct images at k=5 and k=40 which resulted in this:
 
 
 k=5
-![](./images/kmeans/elbow_all_k5.png)
+![](./images/kmeans/elbow_all_k5.png = 250x)
 
 
 k=40
 
-![](./images/kmeans/elbow_all_k40.png)
+![](./images/kmeans/elbow_all_k40.png = 250x)
 
 
 Looking at the graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the next best k value which was k=8 for this reason.
@@ -63,17 +65,17 @@ Intersection over Union (IoU) is a metric designed for evaluation of object dete
 
 Original Player View:
 
-![](./images/''.png)
+![](./images/''.png = 250x)
 
 
 Ground Truth Bounding Boxes:
 
-![](./images/''.png)
+![](./images/''.png = 250x)
 
 
 Prediction Bounding Boxes
 
-![](./images/''.png)
+![](./images/''.png = 250x)
 
 The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes
 
