@@ -25,11 +25,11 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 ## Evaluation
 
-# Elbow Method for K-Means
+### Elbow Method for K-Means
 
-For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We first evaluated on one image, which resulted in this image:
+For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We first evaluated on one image, which resulted in this graph:
 
-![](./images/kmeans/'elbow0'.png)
+![](./images/kmeans/elbow0.png)
 
 
 For images, 
