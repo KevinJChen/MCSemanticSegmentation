@@ -31,17 +31,17 @@ Intersection over Union (IoU) is a metric designed for evaluation of object dete
 
 Original Player View:
 
-![](./images/original1.png)
+![](./images/''.png)
 
 
 Ground Truth Bounding Boxes:
 
-![](./images/ground1.png)
+![](./images/''.png)
 
 
 Prediction Bounding Boxes
 
-![](./images/output1.png)
+![](./images/''.png)
 
 
 ## References
