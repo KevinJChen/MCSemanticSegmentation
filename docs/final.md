@@ -10,10 +10,9 @@ title:  Final Report
 
 ## Project Summary
 
-Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale, but ultimately settled on a image classification problem known as semantic segmentation. Semantic segmentation involves classifying each  each pixel of an image to some class e.g. water, sky, dirt(figure 1 maybe the video,ground truth,predictions image).
+Our goal for this project went through many iterations, we began by trying to figure out a project that was feasible while also piquing our interests. We had some project ideas before such as agent battle royale but ultimately settled on an image classification problem known as semantic segmentation. Semantic segmentation involves classifying each pixel of an image to some class e.g. water, sky, dirt(figure 1 maybe the video, ground truth, predictions image).
 
-A combination of Malmo functions made it possible for us to determine what block/entities were on the players screen, however, this does not apply to normal minecraft. In normal minecraft the only way to determine the location and type of blocks/entities that are contained within the players perspective is by having someone who is qualified manually look and decide, however, in malmo we are able to generate color maps which have corrsesponding colors for each block/entity. In order to semanticaly segment normal minecraft it was necessary apply machine learning algorithms.
-
+A combination of Malmo functions made it possible for us to determine what block/entities were on the player's screen, however, this does not apply to normal Minecraft. In normal Minecraft, the only way to determine the location and type of blocks/entities that are contained within the player's perspective is by having someone who is qualified manually look and decide. In Malmo we can generate color maps that have corresponding colors for each block/entity. To semantically segment normal Minecraft without someone manually annotating images it is necessary to apply machine learning algorithms.
 
 <div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
 <div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
@@ -21,8 +20,9 @@ A combination of Malmo functions made it possible for us to determine what block
 
 ## Approaches
 Before we could apply any machine learning algorithms to aid us in our semantic segmentation task we needed to create the ground truth images for our training and test set.
-this introduced The main obstactle of the project, malmos colour map producer. The color maps that malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there was tens of thousands of very similar looking although unique colors which identified each block/entity (figure 2 the fucked up image with a lot of white). We had to find a way to compare all these similar colors and group them with eachother in order to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space and then compared them each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their own unique color, this let us convert every rgb image into a greyscale image containing numbers from 0-132(figure 3 a normal rgb mask).
-For our semantic segmentation problem we used a neural network following the DeepLabv3 architechture pretrained on resnet 101 as our model of choice.
+this introduced The main obstacle of the project, Malmos color map producer. The color maps that Malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there were tens of thousands of very similar-looking although unique colors that identified each block/entity (figure 2 the fucked up image with a lot of white). We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132(figure 3 a normal RGB mask).
+
+For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice.
 
 
 
