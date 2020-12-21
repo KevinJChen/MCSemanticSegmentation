@@ -17,7 +17,7 @@ Our goal for this project went through many iterations, trying to figure out a p
 An obstacle was using Malmo's functionality to get the location of block/entity, determine whether or not it was in player's view, figure the type of block/entity, and the structure that it was apart of. We had a lot of information to use to decipher simply reading the blocks on the player's screen. Part of our solution involved generating a color map and matching the color ID of the screen to blocks/entities in Minecraft. An example of a generated color map is seen below:
 
 
-<div style="text-align:center"><img src="./images/kmeans/elbow0.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/kmeans/colormap1.png" width="400"/> </div>
 
 
 
@@ -31,19 +31,23 @@ An obstacle was using Malmo's functionality to get the location of block/entity,
 
 For part of our K-means evaluation, we wanted to choose the optimal value of k. There were over 100 different colors and possible clusters, so we wanted an ideal k for that represented the sum of our images. We chose the elbow method which determined the optimal value for k based on the sum of squared distances (SSE) between data points and the cluster centroids. We first evaluated using the elbow method on one image with k=40, which resulted in this graph:
 
-<img src="./images/kmeans/elbow0.png" width="400" text-align:"center"/>
+
+<div style="text-align:center"><img src="./images/kmeans/elbow0.png" width="400"/> </div>
 
 
 We proceeded to apply this to a sample of 10 distinct images at k=5 and k=40 which resulted in this:
 
 
 k=5
-![](./images/kmeans/elbow_all_k5.png = 250x)
+
+
+<div style="text-align:center"><img src="./images/kmeans/elbow_all_k5.png" width="400"/> </div>
 
 
 k=40
 
-![](./images/kmeans/elbow_all_k40.png = 250x)
+
+<div style="text-align:center"><img src="./images/kmeans/elbow_all_k40.png" width="400"/> </div>
 
 
 Looking at the graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the next best k value which was k=8 for this reason.
