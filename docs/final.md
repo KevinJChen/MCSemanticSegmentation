@@ -33,10 +33,16 @@ For part of our K-means evaluation, we wanted to choose the optimal value of k. 
 ![](./images/kmeans/elbow0.png)
 
 
-We proceeded to apply this to a sample of 10 distinct images which resulted in this:
+We proceeded to apply this to a sample of 10 distinct images at k=5 and k=40 which resulted in this:
 
 
-![](./images/kmeans/elbow_all_10.png)
+k=5
+![](./images/kmeans/elbow_all_k5.png)
+
+
+k=40
+
+![](./images/kmeans/elbow_all_k40.png)
 
 
 Looking at the graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the next best k value which was k=8 for this reason.
