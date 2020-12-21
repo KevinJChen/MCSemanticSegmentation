@@ -90,3 +90,15 @@ https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_check
 https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/#:~:text=What%20is%20Intersection%20over%20Union,the%20popular%20PASCAL%20VOC%20challenge.
 
 https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html
+
+https://en.wikipedia.org/wiki/CIELAB_color_space
+
+https://github.com/chenxi116/DeepLabv3.pytorch
+
+https://arxiv.org/pdf/1606.00915.pdf
+
+https://neptune.ai/blog/image-segmentation-in-2020
+
+https://python-colormath.readthedocs.io/en/latest/
+
+https://pytorch.org/tutorials/recipes/recipes/custom_dataset_transforms_loader.html
