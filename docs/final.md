@@ -106,15 +106,15 @@ For our semantic segmentation problem, we used a neural network following the De
 ####
 #### Advantages
 
-*This approach is very accurate in its predictions as seen in the evaluation section.
-*Given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image.
-*The model is also able to generalize very well to the large amount of classes.
+* This approach is very accurate in its predictions as seen in the evaluation section.
+* Given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image.
+* The model is also able to generalize very well to the large amount of classes.
 
 #### Disadvantages
 
-*The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. 
-*We had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. 
-*The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
+* The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. 
+* We had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. 
+* The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
 ## Evaluation
