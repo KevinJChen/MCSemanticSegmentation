@@ -60,13 +60,23 @@ title:  Final Report
 
 
 ### Baseline Model: K-Means
+
+
+Comparison of the colors within an RGB image is done by a Euclidean distance which is simply
+
+ $O(mnr*d)r^2 = x^2 + y^2 $ 
+
+
+
+
+
 #### Advantages
-It's very simple and fast to use. 
 #### Disadvantages
-It is a clustering algorithm so we only know that there are k many clusters not that they correspond to a speicific class we are looking for. 
 ### Our Best Model: DeepLabV3
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
+
+
 #### Predicted Image  
 
 
@@ -78,6 +88,7 @@ For our semantic segmentation problem, we used a neural network following the De
 
 There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
 The biggest advantage is that the neural network approach is very accurate in its predictions as seen in the evaluation section. Another benefit is given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image. The model is also able to generalize very well to the large amount of classes.
+
 #### Disadvantages
 
 The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. we had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. another con is how long it took to train, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
