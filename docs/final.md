@@ -102,7 +102,7 @@ For part of our K-means evaluation, we wanted to choose the optimal value of k. 
 <div style="text-align:center"><img src="./images/kmeans/elbow_all_k40.png" width="400"/> </div>
 
 
-Looking at the example graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k value because we believed there may have been too much bias of our player perspective from looking at the blue sky or gray cobblestone floor. We chose the k value of 8 as from the sum of our tests, it seemed to be the next most optimal k value.
+Looking at the example graph, it would seem k=2 would be a clear choice for optimality, however we chose not to go with k=2 because we found that the model was clustering between the sky and everything else. We chose the k value of 8 as from the sum of our tests, it seemed to be the next most optimal k value.
 
 We applied k=2 and k=8 to our images to see the difference between these values. The results are shown below:
 
