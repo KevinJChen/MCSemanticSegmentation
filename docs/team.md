@@ -6,11 +6,11 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
+## KEVIN CHEN
 ***UCI Net ID***: chenkj3
 
-## USER 2
+## NU MAI THY TON (THY TON)
 ***UCI Net ID***: thynt
 
-## USER 3
+## Alex Zuzow
 ***UCI Net ID***: azuzow
