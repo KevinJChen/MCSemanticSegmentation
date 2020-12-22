@@ -62,7 +62,7 @@ We had to find a way to compare all these similar colors and group them to creat
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice.
 
-#### Segmented Image 
+#### Predicted Image  
 
 
 <div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
