@@ -86,7 +86,7 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 #### Disadvantages
 
 
-* Choosing the correct and optimal k value is important for the model's success
+* Choosing the correct and optimal k value is important for the model's success and may change per image.
 
 
 * Variable amount of cluster densities such as more of one color than another would skew the clusters.
