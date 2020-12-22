@@ -164,7 +164,7 @@ The loss functions for the training and testing data were graphed over 51 epochs
 <div style="text-align:center"><img src="./images/dataplots/losste.png" width="400"/> </div>
 
 
-From these graphs, we can interpret that our model was able to learn at a a good rate. Both the training and testing were "spiky" and not smooth, but there was a consistent trend downwards at a curve. The training loss is not more accurate and also does not overfit the testing data, so our model is proven to work well. 
+From these graphs, we can interpret that our model was able to learn at a a quick rate. Both the training and testing were "spiky" and not smooth, but there was a consistent trend downwards at a curve. The training loss is not more accurate and also does not overfit the testing data, so our model is proven to work well. 
 
 
 ## References
