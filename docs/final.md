@@ -61,7 +61,9 @@ title:  Final Report
 
 ### Baseline Model: K-Means
 #### Advantages
+It's very simple and fast to use. 
 #### Disadvantages
+It is a clustering algorithm so we only know that there are k many clusters not that they correspond to a speicific class we are looking for. 
 ### Our Best Model: DeepLabV3
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
