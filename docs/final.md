@@ -100,7 +100,7 @@ For our semantic segmentation problem, we used a neural network following the De
 #### Predicted Image  
 
 
-<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/016.png" width="400"/> </div>
 
 
 ####
