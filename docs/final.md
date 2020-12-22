@@ -60,11 +60,21 @@ title:  Final Report
 
   We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. Part of our utilisation of the RGB images and manipulation with it involved conversion to CIELAB color space. This color space is designed for detecting small differences in the color. To convert from RGB to to LAB, there were two steps: conversion from RGB to an XYZ vector and then conversion of the vector to LAB.
 
-Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value. 
+Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. 
+
+
+<div style="text-align:center"><img src="./images/rgbtoxyz.png" width="400"/> </div>  
+
+
+Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value.\
+
+
+<div style="text-align:center"><img src="./images/xyztolab.png" width="400"/> </div>  
+
 
 We then compare the LAB colors using CIE94 formula which aims to compare colors in a way such that the difference is relatable to how humans would discern the diference in colors.
 
-<div style="text-align:center"><img src="./images/colorequations.png" width="500"/> </div>  
+<div style="text-align:center"><img src="./images/colorequations.png" width="400"/> </div>  
 
 
 ### Baseline Model: K-Means
@@ -122,7 +132,7 @@ Focal loss is defined as.
 * The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
-<div style="text-align:center"><img src="./images/016.png" width="1000"/> </div>
+<div style="text-align:center"><img src="./images/ss033.png" width="400"/> </div>
 
 
 ## Evaluation
