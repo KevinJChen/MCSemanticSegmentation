@@ -41,20 +41,14 @@ Before we could apply any machine learning algorithms to aid us in our semantic 
 <div style="float:left, padding:10px"><img src="./images/first_attempt.png" width="400"/> </div>
 
 
-We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132.
+We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132. As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color map of our image. 
 
 
-#### Color Map
+#### Ground Truth Color Map
+
+
 <div style="float:left, padding:10px"><img src="./images/colormap.png" width="400"/> </div>
 
-
-As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color mask of our image. 
-
-Original
-
-Ground Truth
-
-One-to-One mapping (using color map)
 
 This method of data gathering can generate a surplus of data. The over 13000 images generated were also of decent resolution, so we agreed that our model would use more data to minimize overfitting, but as a result may take longer to run.
 
