@@ -108,6 +108,9 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 * Variable amount of cluster densities such as more of one color than another would skew the clusters.
 
 
+#### Example of Result Image with k=8
+
+
 <div style="text-align:center"><img src="./images/kmeans/sample0.png" width="400"/> </div>
 
 
@@ -132,13 +135,22 @@ Focal loss is defined as.
 * The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
+#### Predicted Image #1 (of the image above)
+
+
 <div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
+
+
+#### Original Image Example #2
 
 
 <div style="text-align:center"><img src="./images/ss004.jpg" width="400"/> </div>
 
 
-<div style="text-align:center"><img src="./images/org004.jpg" width="400"/> </div>
+#### Predicted Image #2
+
+
+<div style="text-align:center"><img src="./images/org004.png" width="400"/> </div>
 
 
 
@@ -196,7 +208,7 @@ Intersection over Union (IoU) is a metric which is designed to quantify the perc
 
 
 
-The IoU is then calculated by divding the intersection which is where the model predicted correcly by the union which is every pixel which was classified a specific class for either the ground truth or prediction. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
+The IoU is then calculated by divding the intersection which is where the model predicted correctly by the union which is every pixel which was classified a specific class for either the ground truth or prediction. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
 
 #### Training IoU:
 
