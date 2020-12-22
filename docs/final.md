@@ -16,7 +16,7 @@ Our goal for this project went through many iterations, we began by trying to fi
 #### Example of Segmented Image
 
 
-<div style="float:left, padding:10px"><img src="./images/ss001.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss001.jpg" width="400"/> </div>
 
 
 A combination of Malmo functions made it possible for us to determine what block/entities were on the player's screen, however, this does not apply to normal Minecraft. In normal Minecraft, the only way to determine the location and type of blocks/entities that are contained within the player's perspective is by having someone who is qualified manually look and decide. In Malmo we can generate color maps that have corresponding colors for each block/entity. To semantically segment normal Minecraft without someone manually annotating images it is necessary to apply machine learning algorithms.
@@ -25,13 +25,13 @@ A combination of Malmo functions made it possible for us to determine what block
 #### Original Minecraft Player View
 
 
-<div style="float:left, padding:10px"><img src="./images/video_2186.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
 
 
 #### Color Map
 
 
-<div style="float: left, padding:10px"><img src="./images/colormap_2186.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
 
 
 ## Approaches
@@ -45,7 +45,7 @@ Before we could apply any machine learning algorithms to aid us in our semantic 
 #### Initial Attempt at One-to-One Mapping
 
 
-<div style="float:left, padding:10px"><img src="./images/first_attempt.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/first_attempt.png" width="400"/> </div>
 
 
 We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132. As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color map of our image. The data gathering process generated over 13000 images of decent resolution. 
@@ -54,7 +54,7 @@ We had to find a way to compare all these similar colors and group them to creat
 #### Ground Truth Color Map
 
 
-<div style="float:left, padding:10px"><img src="./images/colormap.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/colormap.png" width="400"/> </div>
 
 
 ### Our Model
@@ -65,7 +65,7 @@ For our semantic segmentation problem, we used a neural network following the De
 #### Segmented Image 
 
 
-<div style="float:left, padding:10px"><img src="./images/ss033.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
 
 
 ####
