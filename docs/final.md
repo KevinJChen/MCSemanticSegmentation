@@ -132,7 +132,7 @@ Focal loss is defined as.
 * The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
-<div style="text-align:center"><img src="./images/ss033.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
 
 
 ## Evaluation
