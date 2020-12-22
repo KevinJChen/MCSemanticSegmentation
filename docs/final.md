@@ -130,7 +130,13 @@ Intersection over Union (IoU) is a metric designed for evaluation of object dete
 <div style="text-align:center"><img src="./images/dataplots/ioute.png" width="400"/> </div>
 
 
+An IoU value that is closer to 1 means it is more accurate. In the training, the IoU starts at 0 and quickly increases towards 0.9-1.0 which indicates our model is able to learn quickly and accurately. 
+
+
 ### Loss Function
+
+
+The loss functions for the training and testing data were graphed over 51 epochs. These represent the cost of our model and a good loss should decrease over time.
 
 
 #### Training Loss
@@ -143,6 +149,9 @@ Intersection over Union (IoU) is a metric designed for evaluation of object dete
 
 
 <div style="text-align:center"><img src="./images/dataplots/losste.png" width="400"/> </div>
+
+
+From these graphs, we can interpret that our model was able to learn at a a good rate. Both the training and testing were "spiky" and not smooth, but there was a consistent trend downwards at a curve. The training loss is not more accurate and also does not overfit the testing data, so our model is proven to work well. 
 
 
 ## References
