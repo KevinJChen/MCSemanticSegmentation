@@ -251,3 +251,13 @@ https://en.wikipedia.org/wiki/CIELAB_color_space
 https://www.kdnuggets.com/2019/08/introduction-image-segmentation-k-means-clustering.html
 
 https://en.wikipedia.org/wiki/K-means_clustering
+
+https://arxiv.org/abs/1708.02002
+
+https://expoundai.wordpress.com/2019/08/30/transfer-learning-for-segmentation-using-deeplabv3-in-pytorch/
+
+http://www.brucelindbloom.com/index.html?Math.html
+
+https://en.wikipedia.org/wiki/Jaccard_index
+
+https://towardsdatascience.com/review-deeplabv3-atrous-convolution-semantic-segmentation-6d818bfd1d74
