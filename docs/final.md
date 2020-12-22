@@ -111,7 +111,7 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 #### Example of Result Image with k=8
 
 
-<div style="text-align:center"><img src="./images/kmeans/sample0.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/kmeans/sample0.png" width="500"/> </div>
 
 
 ### Our Best Model: DeepLabV3
@@ -119,7 +119,7 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 Focal loss is defined as.
 
-<div style="text-align:center"><img src="./images/groundtruthclass.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/groundtruthclass.png" width="500"/> </div>
 
 
 #### Advantages
@@ -138,25 +138,25 @@ Focal loss is defined as.
 #### Original Image Example #1
 
 
-<div style="text-align:center"><img src="./images/1364.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/1364.png" width="500"/> </div>
 
 
 #### Predicted Image #1
 
 
-<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss033.jpg" width="500"/> </div>
 
 
 #### Original Image Example #2
 
 
-<div style="text-align:center"><img src="./images/org004.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/org004.png" width="500"/> </div>
 
 
 #### Predicted Image #2
 
 
-<div style="text-align:center"><img src="./images/ss004.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss004.jpg" width="500"/> </div>
 
 
 
