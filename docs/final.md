@@ -97,7 +97,7 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
 
-<div style="text-align:center"><img src="./images/016.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/016.png" width="1000"/> </div>
 
 
 #### Advantages
