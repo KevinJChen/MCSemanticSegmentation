@@ -68,11 +68,30 @@ Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. 
 ### Baseline Model: K-Means
 
 
-For segmentation, a k-means algorithm involves clustering based on the representation of a color in an RGB image. The number of clusters can be adjusted, however the optimal k value was determined by the Elbow method. The Elbow method uses the clusters centroids and the sum of its squared differences and its distance to the data point to determine the optimal amount of clusters. 
+A k-means algorithm involves creating k clusters by partitioning the data depending on its distance to the nearest cluster
+
+
+For segmentation, a k-means algorithm involves clustering based on the representation of a color in an RGB image. The number of clusters can be adjusted, however the optimal k value was determined by the Elbow method. The Elbow method uses the clusters centroids and the sum of its squared differences and its distance to the data point to determine the optimal amount of clusters. More about this procedure and its details are in the evaluation section.
 
 
 #### Advantages
+
+
+* Scales easily to larger data sets such as the one that was worked with
+
+
+* Guarantees convergence of data to some cluster
+
+
 #### Disadvantages
+
+
+* Choosing the correct and optimal k value is important for the model's success
+
+
+* Variable amount of cluster densities such as more of one color than another would skew the clusters.
+
+
 ### Our Best Model: DeepLabV3
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
@@ -201,3 +220,7 @@ https://python-colormath.readthedocs.io/en/latest/
 https://pytorch.org/tutorials/recipes/recipes/custom_dataset_transforms_loader.html
 
 https://en.wikipedia.org/wiki/CIELAB_color_space
+
+https://www.kdnuggets.com/2019/08/introduction-image-segmentation-k-means-clustering.html
+
+https://en.wikipedia.org/wiki/K-means_clustering
