@@ -12,5 +12,5 @@ title:  Team
 ## NU MAI THY TON (THY TON)
 ***UCI Net ID***: thynt
 
-## Alex Zuzow
+## ALEX ZUZOW
 ***UCI Net ID***: azuzow
