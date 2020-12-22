@@ -50,7 +50,8 @@ title:  Final Report
 
   We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132.
 
-
+(insert lab color conversion)
+(insert lab comparison)
 #### Ground Truth Color Map
 
 
@@ -65,7 +66,7 @@ title:  Final Report
 Comparison of the colors within an RGB image is done by a Euclidean distance which is simply
 
  $O(mnr*d)r^2 = x^2 + y^2 $ 
-
+(insert k means formula)
 
 
 
@@ -76,7 +77,6 @@ Comparison of the colors within an RGB image is done by a Euclidean distance whi
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
-
 #### Predicted Image  
 
 
@@ -84,6 +84,7 @@ For our semantic segmentation problem, we used a neural network following the De
 
 
 ####
+(insert focal loss formula)
 #### Advantages
 
 There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
@@ -140,7 +141,10 @@ We applied k=2 and k=8 to our images to see the difference between these values.
 
 ### Intersection Over Union 
 
-Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
+Intersection over Union (IoU) is a metric which is designed to quantify the percent of overlap between a target and a source image.
+(insert IoU formula)
+
+The IoU is then calculated by divding the intersection which is where the model predicted correcly by the union which is every pixel which was classified a specific class for either the ground truth or prediction. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
 
 
 #### Training IoU:
