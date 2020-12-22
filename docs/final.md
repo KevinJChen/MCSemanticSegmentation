@@ -225,7 +225,7 @@ The IoU is then calculated by divding the intersection which is where the model 
 #### Testing IoU:
 
 
-<div style="text-align:center"><img src="./images/dataplots/ioute.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/dataplots/ioute1.png" width="400"/> </div>
 
 
 An IoU value that is closer to 1 means it is more accurate. In the training, the IoU starts at 0 and quickly increases towards 0.9-1.0 which indicates our model is able to learn quickly and accurately. 
