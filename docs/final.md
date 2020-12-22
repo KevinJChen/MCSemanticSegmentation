@@ -72,7 +72,9 @@ Comparison of the colors within an RGB image is done by a Euclidean distance whi
 
 
 #### Advantages
+It's very simple to set up and the training time is seconds.
 #### Disadvantages
+Since it is a clustering algorithm we do not truly know what each class each cluster represents. It cannot generalize well, if there are too many classes or too few classes then the accuracy will go down. 
 ### Our Best Model: DeepLabV3
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
