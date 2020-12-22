@@ -41,16 +41,13 @@ Before we could apply any machine learning algorithms to aid us in our semantic 
 <div style="float:left, padding:10px"><img src="./images/first_attempt.png" width="400"/> </div>
 
 
-We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132. As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color map of our image. 
+We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132. As the player moved, we also took a scan of the surrounding environment to determine types of blocks/entities, block/entity location, and whether these blocks/entities were visible to the agent as a collection. The combination of these resulted in a mapping of 1.32 million colors to 180 classes throughout the world achieved with the python-colormath package. This was a one-to-one mapping and generated a color map of our image. The data gathering process generated over 13000 images of decent resolution. 
 
 
 #### Ground Truth Color Map
 
 
 <div style="float:left, padding:10px"><img src="./images/colormap.png" width="400"/> </div>
-
-
-This method of data gathering can generate a surplus of data. The over 13000 images generated were also of decent resolution, so we agreed that our model would use more data to minimize overfitting, but as a result may take longer to run.
 
 
 ### Our Model
@@ -62,9 +59,14 @@ For our semantic segmentation problem, we used a neural network following the De
 
 #### Advantages
 
+
 A lot of data lessens the impact of overfitting although it does not completely eliminate it. Later in the evaluation, we can determine if our model had been overfitting or not. Having more data will compensate better for the features in our model which can reduce the variance in our model. A disadvantage of small datasets is possible bias, but since our dataset is very large most of the bias should be eliminated.
 
+
 #### Disadvantages
+
+
+Our model was huge which limited the size of the batches. Although larger batch sizes has its disadvantages, in this model's case, it would have been ideal to have the model read more data and examples in order to avoid generalization and overfitting.
 
 
 ## Evaluation
