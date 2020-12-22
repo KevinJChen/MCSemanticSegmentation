@@ -138,13 +138,13 @@ Focal loss is defined as.
 #### Original Image Example #1
 
 
-<div style="text-align:center"><img src="./images/1364.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/1364.png" width="400"/> </div>
 
 
 #### Predicted Image #1
 
 
-<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss033.png" width="400"/> </div>
 
 
 #### Original Image Example #2
@@ -156,7 +156,7 @@ Focal loss is defined as.
 #### Predicted Image #2
 
 
-<div style="text-align:center"><img src="./images/ss004.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss004.jpg" width="400"/> </div>
 
 
 
