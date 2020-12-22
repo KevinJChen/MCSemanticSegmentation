@@ -100,7 +100,6 @@ For our semantic segmentation problem, we used a neural network following the De
 <div style="text-align:center"><img src="./images/016.png" width="400"/> </div>
 
 
-####
 #### Advantages
 
 There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
