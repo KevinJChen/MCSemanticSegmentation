@@ -25,13 +25,13 @@ title:  Final Report
 #### Original Minecraft Player View
 
 
-<div style="text-align:center"><img src="./images/video_2186.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/video_2186.png" width="500"/> </div>
 
 
 #### Color Map
 
 
-<div style="text-align:center"><img src="./images/colormap_2186.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/colormap_2186.png" width="500"/> </div>
 
 
 ## Approaches
