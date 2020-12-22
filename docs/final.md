@@ -61,7 +61,7 @@ title:  Final Report
 ### Our Model
 
 
-For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice.
+For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
 #### Predicted Image  
 
@@ -73,14 +73,11 @@ For our semantic segmentation problem, we used a neural network following the De
 
 #### Advantages
 
-
-A lot of data lessens the impact of overfitting although it does not completely eliminate it. Later in the evaluation, we can determine if our model had been overfitting or not. Having more data will compensate better for the features in our model which can reduce the variance in our model. A disadvantage of small datasets is possible bias, but since our dataset is very large most of the bias should be eliminated.
-
-
+There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
+The biggest advantage is that the neural network approach is very accurate in its predictions as seen in the evaluation section. Another benefit is given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image. The model is also able to generalize very well to the large amount of classes.
 #### Disadvantages
 
-
-Our model was huge which limited the size of the batches. Although larger batch sizes has its disadvantages, in this model's case, it would have been ideal to have the model read more data and examples in order to avoid generalization and overfitting.
+The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. we had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. another con is how long it took to train, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
 ## Evaluation
