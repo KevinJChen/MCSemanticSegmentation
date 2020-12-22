@@ -16,7 +16,7 @@ title:  Final Report
 #### Example of Segmented Image
 
 
-<div style="text-align:center"><img src="./images/ss001.jpg" width="400"/> </div>
+<div style="text-align:center"><img src="./images/ss001.jpg" width="500"/> </div>
 
 
   A combination of Malmo functions made it possible for us to determine what block/entities were on the player's screen, however, this does not apply to normal Minecraft. In normal Minecraft, the only way to determine the location and type of blocks/entities that are contained within the player's perspective is by having someone who is qualified manually look and decide. In Malmo we can generate color maps that have corresponding colors for each block/entity. To semantically segment normal Minecraft without someone manually annotating images it is necessary to apply machine learning algorithms.
@@ -45,13 +45,13 @@ title:  Final Report
 #### Initial Attempt at One-to-One Mapping
 
 
-<div style="text-align:center"><img src="./images/first_attempt.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/first_attempt.png" width="500"/> </div>
 
 
 #### Ground Truth Color Map
 
 
-<div style="text-align:center"><img src="./images/colormap.png" width="400"/> </div>
+<div style="text-align:center"><img src="./images/colormap.png" width="500"/> </div>
 
 
   We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIE94 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132.
@@ -63,18 +63,18 @@ title:  Final Report
 Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. 
 
 
-<div style="text-align:center"><img src="./images/rgbtoxyz.png" width="400"/> </div>  
+<div style="text-align:center"><img src="./images/rgbtoxyz.png" width="500"/> </div>  
 
 
 Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value.\
 
 
-<div style="text-align:center"><img src="./images/xyztolab.png" width="400"/> </div>  
+<div style="text-align:center"><img src="./images/xyztolab.png" width="500"/> </div>  
 
 
 We then compare the LAB colors using CIE94 formula which aims to compare colors in a way such that the difference is relatable to how humans would discern the diference in colors.
 
-<div style="text-align:center"><img src="./images/colorequations.png" width="400"/> </div>  
+<div style="text-align:center"><img src="./images/colorequations.png" width="500"/> </div>  
 
 
 ### Baseline Model: K-Means
