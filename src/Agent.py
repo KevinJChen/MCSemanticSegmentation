@@ -1,26 +1,7 @@
 from __future__ import print_function
 from __future__ import division
 import math
-# ------------------------------------------------------------------------------------------------
-# Copyright (c) 2016 Microsoft Corporation
-# 
-# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-# associated documentation files (the "Software"), to deal in the Software without restriction,
-# including without limitation the rights to use, copy, modify, merge, publish, distribute,
-# sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-# 
-# The above copyright notice and this permission notice shall be included in all copies or
-# substantial portions of the Software.
-# 
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
-# NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-# ------------------------------------------------------------------------------------------------
 
-# Tutorial sample #4: Challenge - get to the centre of the sponge
 
 from builtins import range
 from past.utils import old_div
@@ -81,18 +62,17 @@ missionXML='''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
                     </Inventory>
                 </AgentStart>
                 <AgentHandlers>
-                  
                   <DiscreteMovementCommands/>
                   <ColourMapProducer>	
-			      	<Width>''' + str(1024) + '''</Width>
-			        <Height>''' + str(768) + '''</Height>
+			      	<Width>''' + str(720) + '''</Width>
+			        <Height>''' + str(480) + '''</Height>
 			      </ColourMapProducer>
-                  <InventoryCommands/>
                   <VideoProducer>
-                  	<Width>''' + str(1024) + '''</Width>
-                    <Height>''' + str(768) + '''</Height>
+                  	<Width>''' + str(720) + '''</Width>
+                    <Height>''' + str(480) + '''</Height>
                   </VideoProducer>
-                  <AgentQuitFromTimeUp timeLimitMs='20000'/>
+                  <InventoryCommands/>
+                  <AgentQuitFromTimeUp timeLimitMs='500000'/>
                  <ObservationFromGrid>
                       <Grid name="floorAll">
                         	<min x="-20" y="-40" z="-20"/>
@@ -159,7 +139,6 @@ def get_lineOfSight_observation(world_state,agent_host):
     return ray
 
 agent_host = MalmoPython.AgentHost()
-spectator_host = MalmoPython.AgentHost()
 malmoutils.parse_command_line(agent_host)
 try:
     agent_host.parse( sys.argv )
@@ -174,7 +153,7 @@ if agent_host.receivedArgument("help"):
 
 my_mission = MalmoPython.MissionSpec(missionXML, True)
 my_mission.allowAllAbsoluteMovementCommands()
-my_mission.requestVideo(1024,768)
+my_mission.requestVideo(720,480)
 agent_recording_spec = MalmoPython.MissionRecordSpec()
 
 
@@ -188,8 +167,8 @@ if recordingsDirectory:
 	if agent_host.receivedArgument("record_video"):
 		#types VIDEO,COLOUR_MAP
 		
-		agent_recording_spec.recordMP4(MalmoPython.FrameType.COLOUR_MAP, 1, 8000000, True)
-		agent_recording_spec.recordMP4(MalmoPython.FrameType.VIDEO, 1, 8000000, True)
+		agent_recording_spec.recordMP4(MalmoPython.FrameType.COLOUR_MAP, 15, 3000000, False)
+		agent_recording_spec.recordMP4(MalmoPython.FrameType.VIDEO, 15, 6000000, False)
 
 my_mission_record= MalmoPython.MissionRecordSpec()
 # Attempt to start a mission:
@@ -243,26 +222,27 @@ while world_state.is_mission_running:
 	
     
 
-	rand_x=np.random.randint(0,40)
-	rand_z=np.random.randint(0,40)
-	agent_x+=rand_x-20
-	agent_z+=rand_z-20
-	grid= np.array(load_grid(world_state))
-	grid=grid.reshape(81,41,41)
-	y=0
-	for i in range(len(grid)-1,0,-1):
-		if grid[i][rand_z][rand_x]!='air':
-			delta=i
-			delta=i-39
-			print(delta)
-			agent_y+=delta
-			# print(agent_y)
-			break
+	# rand_x=np.random.randint(0,40)
+	# rand_z=np.random.randint(0,40)
+	# agent_x+=rand_x-20
+	# agent_z+=rand_z-20
+ #  if world_state.is_mission_running:
+ #    grid= np.array(load_grid(world_state))
+ #    grid=grid.reshape(81,41,41)
+ #    y=0
+ #  	for i in range(len(grid)-1,0,-1):
+ #      if grid[i][rand_z][rand_x]!='air':
+ #        delta=i
+ #  			delta=i-39
+ #  			print(delta)
+ #  			agent_y+=delta
+ #  			# print(agent_y)
+ #  			break
 
-	# agent_host.sendCommand('tpx ' + str(agent_x+.5))
-	# agent_host.sendCommand('tpz ' + str(agent_z+.5))
-	# agent_host.sendCommand('tpy ' + str(agent_y))
-	# time.sleep(.3)
+  	# agent_host.sendCommand('tpx ' + str(agent_x+.5))
+  	# agent_host.sendCommand('tpz ' + str(agent_z+.5))
+  	# agent_host.sendCommand('tpy ' + str(agent_y))
+  	# time.sleep(.3)
 
 
 	world_state = agent_host.getWorldState()
