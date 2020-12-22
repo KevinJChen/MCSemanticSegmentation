@@ -16,7 +16,7 @@ Our goal for this project went through many iterations, we began by trying to fi
 #### Example of Segmented Image
 
 
-<div style="float:left, padding:10px"><img src="./images/output2.png" width="400"/> </div>
+<div style="float:left, padding:10px"><img src="./images/ss001.jpg" width="400"/> </div>
 
 
 A combination of Malmo functions made it possible for us to determine what block/entities were on the player's screen, however, this does not apply to normal Minecraft. In normal Minecraft, the only way to determine the location and type of blocks/entities that are contained within the player's perspective is by having someone who is qualified manually look and decide. In Malmo we can generate color maps that have corresponding colors for each block/entity. To semantically segment normal Minecraft without someone manually annotating images it is necessary to apply machine learning algorithms.
@@ -65,7 +65,7 @@ For our semantic segmentation problem, we used a neural network following the De
 #### Segmented Image 
 
 
-<div style="float:left, padding:10px"><img src="./images/output1.png" width="400"/> </div>
+<div style="float:left, padding:10px"><img src="./images/ss033.jpg" width="400"/> </div>
 
 
 ####
