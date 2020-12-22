@@ -160,8 +160,10 @@ We applied k=2 and k=8 to our images to see the difference between these values.
 
 ### Intersection Over Union 
 
-Intersection over Union (IoU) is a metric designed for evaluation of object detection, which was the perfect metric to use in our model. For this metric, two bounds are used: the ground truth bounding boxes and the prediction bounding boxes from the model. The IoU is then calculated by divding the area of overlap and the area of union between the bounding boxes. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
+Intersection over Union (IoU) is a metric which is designed to quantify the percent of overlap between a target and a source image.
+(insert IoU formula)
 
+The IoU is then calculated by divding the intersection which is where the model predicted correcly by the union which is every pixel which was classified a specific class for either the ground truth or prediction. Through 51 epochs, we used this metric and to evaluate our model. the graphs show the IoU values for the training and testing over these epochs.
 
 #### Training IoU:
 
