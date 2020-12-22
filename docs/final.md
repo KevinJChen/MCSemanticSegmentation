@@ -35,7 +35,10 @@ A combination of Malmo functions made it possible for us to determine what block
 Before we could apply any machine learning algorithms to aid us in our semantic segmentation task we needed to create the ground truth images for our training and test set. This introduced one of the obstacles of the project, Malmos color map producer. The color maps that Malmo returns although visually identify each entity/block with a unique color in practice this is not the case, for each block/entity there were tens of thousands of very similar-looking although unique colors that identified each block/entity.
 
 
-(insert image of screwed up image)
+#### Initial Attempt at One-to-One Mapping
+
+
+<div style="float:left, padding:10px"><img src="./images/first_attempt.png" width="400"/> </div>
 
 
 We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132.
