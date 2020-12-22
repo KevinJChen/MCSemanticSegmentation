@@ -94,20 +94,27 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 
 ### Our Best Model: DeepLabV3
 
-For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function. 
+For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
 
-<div style="text-align:center"><img src="./images/016.png" width="400"/> </div>
+#### Predicted Image  
 
 
+<div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
+
+
+####
 #### Advantages
 
-There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
-The biggest advantage is that the neural network approach is very accurate in its predictions as seen in the evaluation section. Another benefit is given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image. The model is also able to generalize very well to the large amount of classes.
+*This approach is very accurate in its predictions as seen in the evaluation section.
+*Given a dataset where we know what labels correspond to each class we are able to determine what blocks/entities are contained in a single image and what their location is within the image.
+*The model is also able to generalize very well to the large amount of classes.
 
 #### Disadvantages
 
-The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. we had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. another con is how long it took to train, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
+*The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. 
+*We had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. 
+*The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
 
 
 ## Evaluation
@@ -150,6 +157,7 @@ We applied k=2 and k=8 to our images to see the difference between these values.
 
 
 <div style="text-align:center"><img src="./images/kmeans/img0_k8.png" width="400"/> </div>
+
 
 
 
