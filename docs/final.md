@@ -58,12 +58,13 @@ title:  Final Report
 
   We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. 
   
-  Comparison of the colors within an RGB image is done by determining the Euclidean distance between them where it compares a single color to another single color. The sum of these would result in the variance of the color difference. Knowing the variance and the difference amount between the colors allowed us to map similar colors together.
+
 
 Part of our utilisation of the RGB images and manipulation with it involved conversion to CIELAB color space. This color space is designed for detecting small differences in the color. To convert from RGB to to LAB, there were two steps: conversion from RGB to an XYZ vector and then conversion of the vector to LAB.
 
 Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value. 
 
+We then compare the LAB colors using CIEDE2000 formula which aims to compare colors in a way such that the difference is relatable to how humans would discern the diference in colors.
 
 ### Baseline Model: K-Means
 
