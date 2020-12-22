@@ -63,6 +63,8 @@ title:  Final Report
 #### Advantages
 #### Disadvantages
 ### Our Best Model: DeepLabV3
+
+For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 #### Predicted Image  
 
 
@@ -70,8 +72,6 @@ title:  Final Report
 
 
 ####
-For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
-
 #### Advantages
 
 There are multiple advantages to using our DeepLabv3 approach for Minecraft segmentation.
