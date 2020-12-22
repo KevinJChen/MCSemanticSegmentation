@@ -3,7 +3,7 @@ layout: default
 title:  Final Report
 ---
 
-## Video (this is old video, we need to update... delete this when updated)
+## Video
 
 <div style="text-align:center"> <iframe width="560" height="315" src="https://www.youtube.com/watch?v=_vTTZ5to-hQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> </div>
 
