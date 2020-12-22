@@ -135,6 +135,14 @@ Focal loss is defined as.
 <div style="text-align:center"><img src="./images/ss033.jpg" width="400"/> </div>
 
 
+<div style="text-align:center"><img src="./images/ss004.jpg" width="400"/> </div>
+
+
+<div style="text-align:center"><img src="./images/org004.jpg" width="400"/> </div>
+
+
+
+
 ## Evaluation
 
 
