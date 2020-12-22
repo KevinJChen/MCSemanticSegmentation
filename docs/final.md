@@ -57,12 +57,6 @@ title:  Final Report
 <div style="text-align:center"><img src="./images/colormap.png" width="400"/> </div>
 
   We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. 
-
-### Our Model
-
-
-For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
-
 #### Predicted Image  
 
 
@@ -70,6 +64,13 @@ For our semantic segmentation problem, we used a neural network following the De
 
 
 ####
+
+### Baseline Model: K-Means
+#### Advantages
+#### Disadvantages
+### Our Best Model: DeepLabV3
+
+For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
 #### Advantages
 
