@@ -60,14 +60,7 @@ title:  Final Report
 <div style="text-align:center"><img src="./images/groundtruthclass.png" width="400"/> </div>
 
 
-  We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. 
-  
-
-
-<div style="text-align:center"><img src="./images/colorequations.png" width="400"/> </div>
-
-
-Part of our utilisation of the RGB images and manipulation with it involved conversion to CIELAB color space. This color space is designed for detecting small differences in the color. To convert from RGB to to LAB, there were two steps: conversion from RGB to an XYZ vector and then conversion of the vector to LAB.
+  We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. Part of our utilisation of the RGB images and manipulation with it involved conversion to CIELAB color space. This color space is designed for detecting small differences in the color. To convert from RGB to to LAB, there were two steps: conversion from RGB to an XYZ vector and then conversion of the vector to LAB.
 
 Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value. 
 
@@ -104,12 +97,15 @@ For segmentation, a k-means algorithm involves clustering based on the represent
 * Variable amount of cluster densities such as more of one color than another would skew the clusters.
 
 
+<div style="text-align:center"><img src="./images/kmeans/sample0.png" width="1000"/> </div>
+
+
 ### Our Best Model: DeepLabV3
 
 For our semantic segmentation problem, we used a neural network following the DeepLabv3 architecture pre trained on resnet 101 as our model of choice with a focal loss function.
 
 
-<div style="text-align:center"><img src="./images/016.png" width="1000"/> </div>
+<div style="text-align:center"><img src="./images/colorequations.png" width="400"/> </div>
 
 
 #### Advantages
@@ -123,6 +119,9 @@ For our semantic segmentation problem, we used a neural network following the De
 * The model took a large amount of space in memory, the model itself was around 14 Gigs in size which left little remaining memeory on our gpu. 
 * We had to then determine wether we would rather have a larger image or a larger batch size where we ultimately chose a larger image size. 
 * The long train time, each batch took around 13 seconds on average to complete which led to one epoch taking around 12 hours to complete.
+
+
+<div style="text-align:center"><img src="./images/016.png" width="1000"/> </div>
 
 
 ## Evaluation
