@@ -56,7 +56,7 @@ title:  Final Report
 
 <div style="text-align:center"><img src="./images/colormap.png" width="400"/> </div>
 
-  We then created a algorithm to teleport the agent randomly around the surface of the minecraft world while recording the color map and normal video to automate the label making process which resulted in a dataset of 13000 images with a resolution of 480x720. 
+  We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. 
 
 ### Our Model
 
