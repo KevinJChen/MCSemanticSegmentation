@@ -57,14 +57,15 @@ title:  Final Report
   We had to find a way to compare all these similar colors and group them to create the ground truth images for our semantic segmentation algorithms. To solve this we found the most dominant color for each class, then converted every RGB image to a CIELAB color space, and then compared each color to one another using the CIEDE2000 formula to find which were the most similar to their respective dominant colors. In doing so we had 132 different classes each with their unique color, this let us convert every RGB image into a greyscale image containing numbers from 0-132.
  
 
-<div style="text-align:center"><img src="./images/colorequations.png" width="500"/> </div>  
-
 
   We then created a algorithm to automate the label making processes by teleport the agent randomly around the surface of the minecraft world while recording both, color map and normal video which resulted in a dataset of 13000 images with a resolution of 480x720. Part of our utilisation of the RGB images and manipulation with it involved conversion to CIELAB color space. This color space is designed for detecting small differences in the color. To convert from RGB to to LAB, there were two steps: conversion from RGB to an XYZ vector and then conversion of the vector to LAB.
 
 Conversion of RGB to XYZ was multiplying the vector by a transformation matrix. Conversion of XYZ to LAB used a piecewise function that applied an equation that depended on whether the components of XYZ were greater than an epsilon value. 
 
 We then compare the LAB colors using CIEDE2000 formula which aims to compare colors in a way such that the difference is relatable to how humans would discern the diference in colors.
+
+<div style="text-align:center"><img src="./images/colorequations.png" width="500"/> </div>  
+
 
 ### Baseline Model: K-Means
 
